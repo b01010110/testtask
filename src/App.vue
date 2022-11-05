@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
-</script>
-
 <template>
   <v-app>
     <v-main>
@@ -9,3 +5,11 @@ import { RouterView } from 'vue-router'
     </v-main>
   </v-app>
 </template>
+
+<script setup lang="ts"></script>
+
+<style>
+.v-main {
+  padding: 38px 30px !important;
+}
+</style>
