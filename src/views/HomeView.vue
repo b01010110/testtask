@@ -1,3 +1,5 @@
-<script setup lang="ts"></script>
+<template>
+  <DocumentView />
+</template>
 
-<template>1231233235</template>
+<script setup lang="ts"></script>
