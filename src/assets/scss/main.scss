@@ -1,0 +1,21 @@
+$icon-colors: (
+  blue: #0066ff,
+  grey: #8e9cbb,
+  pink: #FF238D,
+);
+
+.parent-svg-icon-color {
+  @each $key, $color in $icon-colors {
+    &--#{'' + $key} svg {
+      color: $color;
+    }
+  }
+}
+
+.svg-icon-color {
+  @each $key, $color in $icon-colors {
+    &--#{'' + $key} {
+      color: $color;
+    }
+  }
+}
