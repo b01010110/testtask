@@ -8,9 +8,17 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppBtn: typeof import('./src/components/global/AppBtn.vue')['default']
+    AppBtnAction: typeof import('./src/components/global/AppBtnAction.vue')['default']
+    AppBtnToggle: typeof import('./src/components/global/AppBtnToggle.vue')['default']
+    AppExpansionPanel: typeof import('./src/components/global/AppExpansionPanel.vue')['default']
     AppSearchInput: typeof import('./src/components/global/AppSearchInput.vue')['default']
+    DocumentDocument: typeof import('./src/components/document/DocumentDocument.vue')['default']
+    DocumentGroup: typeof import('./src/components/document/DocumentGroup.vue')['default']
+    DocumentGroups: typeof import('./src/components/document/DocumentGroups.vue')['default']
     DocumentPanel: typeof import('./src/components/document/DocumentPanel.vue')['default']
     DocumentSearch: typeof import('./src/components/document/DocumentSearch.vue')['default']
+    DocumentSorted: typeof import('./src/components/document/DocumentSorted.vue')['default']
+    DocumentUnsorted: typeof import('./src/components/document/DocumentUnsorted.vue')['default']
     DocumentView: typeof import('./src/components/document/DocumentView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
