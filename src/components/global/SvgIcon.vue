@@ -1,6 +1,6 @@
 <template>
   <svg aria-hidden="true">
-    <use :href="symbolId" :fill="props.fill" />
+    <use :href="symbolId" :fill="fill" />
   </svg>
 </template>
 

@@ -1,6 +1,6 @@
-component <template>
+<template>
   <v-btn class="app-btn" :class="{ 'app-btn-icon': !!svgIcon }" flat>
-    <SvgIcon v-if="svgIcon" :name="props.svgIcon" />
+    <SvgIcon v-if="svgIcon" :name="svgIcon" />
     <slot></slot>
   </v-btn>
 </template>
@@ -10,7 +10,7 @@ interface AppBtnProps {
   svgIcon?: string
 }
 
-const props = withDefaults(defineProps<AppBtnProps>(), {
+withDefaults(defineProps<AppBtnProps>(), {
   svgIcon: '',
 })
 </script>
