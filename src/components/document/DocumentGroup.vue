@@ -16,7 +16,11 @@
       <div class="document-group__actions">
         <AppBtnAction class="document-group__action parent-svg-icon-color--grey" svg-icon="pencil" />
         <AppBtnAction class="document-group__action parent-svg-icon-color--pink" svg-icon="trash-can" />
-        <AppBtnAction class="document-group__action parent-svg-icon-color--grey" svg-icon="move" />
+        <AppBtnAction
+          class="document-group__action document-group__action-move parent-svg-icon-color--grey parent-svg-icon-color--blue-hover cursor-move"
+          :class="[dragHandleClass ?? '']"
+          svg-icon="move"
+        />
       </div>
     </v-expansion-panel-title>
     <v-expansion-panel-text><slot></slot></v-expansion-panel-text>
@@ -31,6 +35,7 @@ import { documentGroupsValueKey, documentGroupsOpenKey, documentGroupsCloseKey }
 
 interface DocumentGroupProps {
   documentGroup: DocumentGroup
+  dragHandleClass?: string
 }
 
 defineProps<DocumentGroupProps>()
@@ -73,10 +78,14 @@ function toggle() {
     display: none;
   }
 
+  &.v-expansion-panel--active + .v-expansion-panel {
+    margin-top: 0;
+  }
+
   :deep(.v-expansion-panel-title) {
     justify-content: flex-start;
     align-items: center;
-    padding: 12px 8px 12px 16px;
+    padding: 10px 8px 10px 16px;
     border: 1px solid #dfe4ef;
     min-height: 46px;
     background-color: #fff;
@@ -90,9 +99,6 @@ function toggle() {
 
   :deep(.v-expansion-panel-text__wrapper) {
     padding: 0 0 0 16px;
-    & > div {
-      margin-top: -1px;
-    }
   }
 
   &__name {
@@ -134,7 +140,7 @@ function toggle() {
     margin-left: 16px;
     font-family: 'Fira Sans', sans-serif;
     font-size: 11px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 108%;
     color: #8e9cbb;
     white-space: nowrap;

@@ -1,0 +1,70 @@
+$icon-colors: (
+  blue: #0066ff,
+  grey: #8e9cbb,
+  pink: #ff238d,
+);
+
+.parent-svg-icon-color {
+  @each $key, $color in $icon-colors {
+    &--#{'' + $key} svg {
+      color: $color;
+    }
+
+    &--#{$key + '-hover'} svg:hover {
+      color: $color;
+    }
+  }
+}
+
+.svg-icon-color {
+  @each $key, $color in $icon-colors {
+    &--#{'' + $key} {
+      color: $color;
+    }
+
+    &--#{$key + '-hover'}:hover {
+      color: $color;
+    }
+  }
+}
+
+.parent-icon-color {
+  @each $key, $color in $icon-colors {
+    &--#{'' + $key} i {
+      color: $color;
+    }
+
+    &--#{$key + '-hover'} i:hover {
+      color: $color;
+    }
+  }
+}
+
+.icon-color {
+  @each $key, $color in $icon-colors {
+    &--#{'' + $key} {
+      color: $color;
+    }
+
+    &--#{$key + '-hover'}:hover {
+      color: $color;
+    }
+  }
+}
+
+$circle-bg-colors: (
+  pink: #ff238d,
+  yellow: #ffb800,
+  orange: #ff8d23,
+  blue: #0066ff,
+  light-blue: #00c2ff,
+  grey: #8e9cbb,
+);
+
+.circle-color {
+  @each $key, $color in $circle-bg-colors {
+    &--#{'' + $key} {
+      background-color: $color;
+    }
+  }
+}

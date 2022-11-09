@@ -1,0 +1,32 @@
+.document-group-sortable-ghost {
+  opacity: 0.2;
+}
+
+.document-group-sortable-drag {
+  box-shadow: 0px 3px 16px rgba(0, 102, 255, 0.7);
+  opacity: 1 !important;
+  overflow: hidden;
+  height: 48px !important;
+
+  .v-expansion-panel-text {
+    display: none !important;
+  }
+
+  .document-group__action-move svg {
+    color: #0066ff;
+  }
+}
+
+.document-sortable-ghost {
+  opacity: 0.2;
+}
+
+.document-sortable-drag {
+  box-shadow: 0px 3px 16px rgba(0, 102, 255, 0.7);
+  opacity: 1 !important;
+
+  .document-document__action-move svg {
+    color: #0066ff;
+  }
+}
+

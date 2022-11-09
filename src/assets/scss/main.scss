@@ -1,54 +1,6 @@
-$icon-colors: (
-  blue: #0066ff,
-  grey: #8e9cbb,
-  pink: #ff238d,
-);
+@import 'colors.scss';
+@import 'sortable.scss';
 
-.parent-svg-icon-color {
-  @each $key, $color in $icon-colors {
-    &--#{'' + $key} svg {
-      color: $color;
-    }
-  }
-}
-
-.svg-icon-color {
-  @each $key, $color in $icon-colors {
-    &--#{'' + $key} {
-      color: $color;
-    }
-  }
-}
-
-.parent-icon-color {
-  @each $key, $color in $icon-colors {
-    &--#{'' + $key} i {
-      color: $color;
-    }
-  }
-}
-
-.icon-color {
-  @each $key, $color in $icon-colors {
-    &--#{'' + $key} {
-      color: $color;
-    }
-  }
-}
-
-$circle-bg-colors: (
-  pink: #ff238d,
-  yellow: #ffb800,
-  orange: #ff8d23,
-  blue: #0066ff,
-  light-blue: #00c2ff,
-  grey: #8e9cbb,
-);
-
-.circle-color {
-  @each $key, $color in $circle-bg-colors {
-    &--#{'' + $key} {
-      background-color: $color;
-    }
-  }
+.cursor-move {
+  cursor: move;
 }

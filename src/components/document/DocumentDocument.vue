@@ -15,7 +15,11 @@
     <div class="document-document__actions">
       <AppBtnAction class="document-document__action parent-svg-icon-color--grey" svg-icon="pencil" />
       <AppBtnAction class="document-document__action parent-svg-icon-color--pink" svg-icon="trash-can" />
-      <AppBtnAction class="document-document__action parent-svg-icon-color--grey" svg-icon="move" />
+      <AppBtnAction
+        class="document-document__action document-document__action-move parent-svg-icon-color--grey parent-svg-icon-color--blue-hover cursor-move"
+        :class="[dragHandleClass ?? '']"
+        svg-icon="move"
+      />
     </div>
   </div>
 </template>
@@ -25,6 +29,7 @@ import type Document from '@/classes/Document'
 
 interface DocumentDocumentProps {
   document: Document
+  dragHandleClass?: string
 }
 
 defineProps<DocumentDocumentProps>()
@@ -38,6 +43,7 @@ defineProps<DocumentDocumentProps>()
   padding-right: 8px;
   height: 35px;
   border: 1px solid #dfe4ef;
+  background-color: #fff;
 
   &__name {
     font-family: 'Fira Sans', sans-serif;
@@ -45,6 +51,7 @@ defineProps<DocumentDocumentProps>()
     font-weight: 400;
     line-height: 108%;
     color: #000;
+    white-space: nowrap;
   }
 
   &__circles {
@@ -73,7 +80,7 @@ defineProps<DocumentDocumentProps>()
     margin-left: 16px;
     font-family: 'Fira Sans', sans-serif;
     font-size: 11px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 108%;
     color: #ff238d;
   }
@@ -84,7 +91,7 @@ defineProps<DocumentDocumentProps>()
     margin-left: 16px;
     font-family: 'Fira Sans', sans-serif;
     font-size: 11px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 108%;
     color: #8e9cbb;
     white-space: nowrap;

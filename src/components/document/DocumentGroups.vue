@@ -46,14 +46,4 @@ provide(documentGroupsOpenKey, open)
 provide(documentGroupsCloseKey, close)
 </script>
 
-<style scoped lang="scss">
-.document-groups {
-  & > :deep(div) {
-    margin-top: -1px;
-
-    &:first-of-type {
-      margin-top: 0;
-    }
-  }
-}
-</style>
+<style scoped lang="scss"></style>
