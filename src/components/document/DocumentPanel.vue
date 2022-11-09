@@ -17,10 +17,9 @@
   display: flex;
 
   &__title {
-    font-family: 'Fira Sans', sans-serif;
+    @include text;
     font-size: 22px;
     font-weight: 500;
-    line-height: 108%;
     color: #000;
   }
 

@@ -46,10 +46,8 @@ defineProps<DocumentDocumentProps>()
   background-color: #fff;
 
   &__name {
-    font-family: 'Fira Sans', sans-serif;
+    @include text;
     font-size: 13px;
-    font-weight: 400;
-    line-height: 108%;
     color: #000;
     white-space: nowrap;
   }
@@ -78,10 +76,8 @@ defineProps<DocumentDocumentProps>()
 
   &__required {
     margin-left: 16px;
-    font-family: 'Fira Sans', sans-serif;
+    @include text;
     font-size: 11px;
-    font-weight: 400;
-    line-height: 108%;
     color: #ff238d;
   }
 
@@ -89,10 +85,8 @@ defineProps<DocumentDocumentProps>()
     flex-grow: 1;
     position: relative;
     margin-left: 16px;
-    font-family: 'Fira Sans', sans-serif;
+    @include text;
     font-size: 11px;
-    font-weight: 400;
-    line-height: 108%;
     color: #8e9cbb;
     white-space: nowrap;
     overflow: hidden;

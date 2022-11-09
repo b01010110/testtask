@@ -79,18 +79,15 @@ function clear() {
   }
 
   :deep(.v-field__input) {
-    font-family: 'Fira Sans', sans-serif;
+    @include text;
     font-size: 15px;
-    font-weight: 400;
-    line-height: 108%;
     color: #000;
 
     &::placeholder {
-      font-family: 'Fira Sans', sans-serif;
+      @include text;
       font-size: 15px;
       font-style: italic;
       font-weight: 300;
-      line-height: 108%;
       color: #8e9cbb;
       opacity: 1;
     }

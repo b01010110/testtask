@@ -19,10 +19,9 @@ withDefaults(defineProps<AppBtnProps>(), {
 .app-btn {
   border: 1px solid #d3d8df;
   height: 30px !important;
-  font-family: 'Fira Sans', sans-serif;
+  @include text;
   font-size: 12px;
   font-weight: 500;
-  line-height: 108%;
   color: #000;
   text-transform: none;
   letter-spacing: 0;

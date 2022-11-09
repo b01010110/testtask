@@ -103,10 +103,9 @@ function toggle() {
 
   &__name {
     margin-left: 14px;
-    font-family: 'Fira Sans', sans-serif;
+    @include text;
     font-size: 15px;
     font-weight: 500;
-    line-height: 108%;
     color: #000;
     white-space: nowrap;
   }
@@ -138,10 +137,8 @@ function toggle() {
     position: relative;
     top: 1px;
     margin-left: 16px;
-    font-family: 'Fira Sans', sans-serif;
+    @include text;
     font-size: 11px;
-    font-weight: 400;
-    line-height: 108%;
     color: #8e9cbb;
     white-space: nowrap;
     overflow: hidden;
