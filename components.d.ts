@@ -10,7 +10,6 @@ declare module '@vue/runtime-core' {
     AppBtn: typeof import('./src/components/global/AppBtn.vue')['default']
     AppBtnAction: typeof import('./src/components/global/AppBtnAction.vue')['default']
     AppBtnToggle: typeof import('./src/components/global/AppBtnToggle.vue')['default']
-    AppExpansionPanel: typeof import('./src/components/global/AppExpansionPanel.vue')['default']
     AppSearchInput: typeof import('./src/components/global/AppSearchInput.vue')['default']
     DocumentDocument: typeof import('./src/components/document/DocumentDocument.vue')['default']
     DocumentGroup: typeof import('./src/components/document/DocumentGroup.vue')['default']
