@@ -16,8 +16,11 @@
       <AppBtnAction class="document-document__action parent-svg-icon-color--grey" svg-icon="pencil" />
       <AppBtnAction class="document-document__action parent-svg-icon-color--pink" svg-icon="trash-can" />
       <AppBtnAction
-        class="document-document__action document-document__action-move parent-svg-icon-color--grey parent-svg-icon-color--blue-hover cursor-move"
-        :class="[dragHandleClass ?? '']"
+        class="document-document__action document-document__action-move parent-svg-icon-color--grey"
+        :class="[
+          dragHandleClass ?? '',
+          isSortDisabled ? 'cursor-not-allowed' : 'parent-svg-icon-color--blue-hover cursor-move',
+        ]"
         svg-icon="move"
       />
     </div>
@@ -30,9 +33,12 @@ import type Document from '@/classes/Document'
 interface DocumentDocumentProps {
   document: Document
   dragHandleClass?: string
+  isSortDisabled?: boolean
 }
 
-defineProps<DocumentDocumentProps>()
+withDefaults(defineProps<DocumentDocumentProps>(), {
+  isSortDisabled: false,
+})
 </script>
 
 <style scoped lang="scss">

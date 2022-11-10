@@ -9,12 +9,14 @@
       drag-class="document-sortable-drag"
       :force-fallback="true"
       :ghost-behavior="true"
+      :disabled="isSortDisabled"
     >
       <template #item="{ element }: { element: Document }">
         <DocumentDocument
           class="document-unsorted__document"
-          drag-handle-class="document-unsorted__sortable-handle"
           :document="element"
+          :is-sort-disabled="isSortDisabled"
+          drag-handle-class="document-unsorted__sortable-handle"
         />
       </template>
     </draggable>
@@ -22,12 +24,12 @@
 </template>
 
 <script setup lang="ts">
-import { useGlobalState } from '@/store'
+import { useSearch } from '@/composables/search'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type Document from '@/classes/Document'
 import draggable from 'vuedraggable'
 
-const { unsorted: documents } = useGlobalState()
+const { documents, isSortDisabled } = useSearch()
 </script>
 
 <style scoped lang="scss">

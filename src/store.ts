@@ -64,5 +64,7 @@ export const useGlobalState = createGlobalState(() => {
     }),
   ])
 
-  return { sorted, unsorted }
+  const search = ref('')
+
+  return { sorted, unsorted, search }
 })

@@ -17,8 +17,11 @@
         <AppBtnAction class="document-group__action parent-svg-icon-color--grey" svg-icon="pencil" />
         <AppBtnAction class="document-group__action parent-svg-icon-color--pink" svg-icon="trash-can" />
         <AppBtnAction
-          class="document-group__action document-group__action-move parent-svg-icon-color--grey parent-svg-icon-color--blue-hover cursor-move"
-          :class="[dragHandleClass ?? '']"
+          class="document-group__action document-group__action-move parent-svg-icon-color--grey"
+          :class="[
+            dragHandleClass ?? '',
+            isSortDisabled ? 'cursor-not-allowed' : 'parent-svg-icon-color--blue-hover cursor-move',
+          ]"
           svg-icon="move"
         />
       </div>
@@ -36,9 +39,12 @@ import { documentGroupsValueKey, documentGroupsOpenKey, documentGroupsCloseKey }
 interface DocumentGroupProps {
   documentGroup: DocumentGroup
   dragHandleClass?: string
+  isSortDisabled?: boolean
 }
 
-defineProps<DocumentGroupProps>()
+withDefaults(defineProps<DocumentGroupProps>(), {
+  isSortDisabled: false,
+})
 
 const expansionPanel = ref<VExpansionPanel | null>(null)
 const groups = inject(documentGroupsValueKey)

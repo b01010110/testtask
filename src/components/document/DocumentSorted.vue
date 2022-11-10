@@ -9,12 +9,14 @@
         drag-class="document-group-sortable-drag"
         :force-fallback="true"
         :ghost-behavior="true"
+        :disabled="isSortDisabled"
       >
         <template #item="{ element }: { element: DocumentGroupClass }">
           <DocumentGroup
             class="document-sorted__group"
             :value="element.id.toString()"
             :document-group="element"
+            :is-sort-disabled="isSortDisabled"
             drag-handle-class="document-sorted__group-sortable-handle"
           >
             <draggable
@@ -26,12 +28,14 @@
               drag-class="document-sortable-drag"
               :force-fallback="true"
               :ghost-behavior="true"
+              :disabled="isSortDisabled"
             >
               <template #item="{ element: element2 }: { element: DocumentClass }">
                 <DocumentDocument
                   class="document-sorted__document"
-                  drag-handle-class="document-sorted__document-sortable-handle"
                   :document="element2"
+                  :is-sort-disabled="isSortDisabled"
+                  drag-handle-class="document-sorted__document-sortable-handle"
                 />
               </template>
             </draggable>
@@ -44,14 +48,14 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useGlobalState } from '@/store'
+import { useSearch } from '@/composables/search'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type DocumentGroupClass from '@/classes/DocumentGroup'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type DocumentClass from '@/classes/Document'
 import draggable from 'vuedraggable'
 
-const { sorted: documentGroups } = useGlobalState()
+const { documentGroups, isSortDisabled } = useSearch()
 
 const multiple = ref(true)
 const groups = multiple.value ? ref<string[]>([]) : ref<string>('')
